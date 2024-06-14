@@ -1,0 +1,25 @@
+header {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 25px;
+    background-color: white;
+}
+.container {
+    background-color: #E0E0E0;
+    width: 80%px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+main {
+    padding: 10px;
+}
+.addRectangleButton {
+    color: white;
+    background-color: #B22222
+}
+.allRectanglesButton {
+    color: white;
+    background-color: #388E3C
+}

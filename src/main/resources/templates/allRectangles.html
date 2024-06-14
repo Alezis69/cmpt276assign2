@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>allRectangles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .rectangle {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<main class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h1 class="text-center">All Rectangles</h1>
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Width</th>
+                    <th>Height</th>
+                    <th>Colour</th>
+                    <th>Border Colour</th>
+                    <th>Border Style</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="rectangle : ${rectangles}">
+                    <td th:text="${rectangle.name}"></td>
+                    <td th:text="${rectangle.width}"></td>
+                    <td th:text="${rectangle.height}"></td>
+                    <td th:text="${rectangle.colour}"></td>
+                    <td th:text="${rectangle.borderColour}"></td>
+                    <td th:text="${rectangle.borderStyle}"></td>
+                    <td>
+                        <div class="rectangle" th:style="'width:' + ${rectangle.width} + 'px;' +
+                                                         'height:' + ${rectangle.height} + 'px;' +
+                                                         'background-color:' + ${rectangle.colour} + ';' +
+                                                         'border:2px ' + ${rectangle.borderStyle.toLowerCase()} + ' ' +
+                                                         ${rectangle.borderColour} + ';'">
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+</body>
+</html>
