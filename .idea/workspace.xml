@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d089a2-92c1-4ca8-aa94-b4b18437ee8e" name="Changes" comment="v2">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/viewRectangle.html" afterDir="false" />
+    <list default="true" id="03d089a2-92c1-4ca8-aa94-b4b18437ee8e" name="Changes" comment="v5 or something">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmpt276/cmpt276assign2/controllers/RectangleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmpt276/cmpt276assign2/controllers/RectangleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/allRectangles.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/allRectangles.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,12 +87,21 @@
       <option name="project" value="LOCAL" />
       <updated>1718419675627</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="v5 or something">
+      <option name="closed" value="true" />
+      <created>1718426870098</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718426870098</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v1" />
     <MESSAGE value="v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2" />
+    <MESSAGE value="v5 or something" />
+    <option name="LAST_COMMIT_MESSAGE" value="v5 or something" />
   </component>
 </project>
