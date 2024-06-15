@@ -12,8 +12,11 @@
     <groupId>com.cmpt276</groupId>
     <artifactId>cmpt276assign2</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>cmpt276assign2</name>
+    <description>Assignment 2</description>
 
     <properties>
+        <java.version>19</java.version>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
