@@ -1,4 +1,5 @@
 FROM maven:3.8.7-openjdk-19-slim AS build
+WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
