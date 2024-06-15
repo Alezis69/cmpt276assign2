@@ -68,4 +68,70 @@ public class RectangleController {
         rectangleRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
+
+    @DeleteMapping("/Rectangle/DeleteAllRectangles")
+    public ResponseEntity<Void> deleteAllRectangles() {
+        rectangleRepository.deleteAll();
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/Rectangle/viewRectangle/{id}")
+    public String viewRectangle(@PathVariable int id, Model model) {
+        Rectangle rectangle = rectangleRepository.findById(id).orElse(null);
+        if (rectangle != null) {
+            model.addAttribute("rectangle", rectangle);
+            return "viewRectangle.html";
+        } else {
+            // Handle not found error
+            return "redirect:/Rectangle/viewAllRectangles";
+        }
+    }
+
+    @PostMapping("/Rectangle/EditRectangle/{id}")
+    public String editRectangle(@PathVariable int id, @RequestParam Map<String, String> updatedRectangle, HttpServletResponse response) {
+        Rectangle existingRectangle = rectangleRepository.findById(id).orElse(null);
+        if (existingRectangle == null) {
+            // Handle not found error or redirect as needed
+            return "redirect:/Rectangle/viewAllRectangles";
+        }
+
+        String name = updatedRectangle.get("name");
+        int width = Integer.parseInt(updatedRectangle.get("width"));
+        int height = Integer.parseInt(updatedRectangle.get("height"));
+        String colour = updatedRectangle.get("colour");
+        String borderColour = updatedRectangle.get("borderColour");
+        String borderStyle = updatedRectangle.get("borderStyle");
+
+        // Validate width and height
+        width = Math.abs(width);
+        height = Math.abs(height);
+        if (width < 1) {
+            width = 1;
+        }
+        if (height < 1) {
+            height = 1;
+        }
+
+        // Validate hex colors
+        if (!colour.matches("^#([A-Fa-f0-9]{6})$")) {
+            colour = "#808080"; // Set to grey if invalid
+        }
+        if (!borderColour.matches("^#([A-Fa-f0-9]{6})$")) {
+            borderColour = "#808080"; // Set to grey if invalid
+        }
+
+        // Update the existing rectangle's properties
+        existingRectangle.setName(name);
+        existingRectangle.setWidth(width);
+        existingRectangle.setHeight(height);
+        existingRectangle.setColour(colour);
+        existingRectangle.setBorderColour(borderColour);
+        existingRectangle.setBorderStyle(borderStyle);
+
+        rectangleRepository.save(existingRectangle);
+        response.setStatus(200); // OK status
+
+        return "redirect:/Rectangle/viewAllRectangles";
+    }
+
 }
