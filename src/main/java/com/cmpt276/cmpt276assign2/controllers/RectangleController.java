@@ -5,11 +5,10 @@ import com.cmpt276.cmpt276assign2.models.Rectangle;
 import com.cmpt276.cmpt276assign2.models.RectangleRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,5 +63,9 @@ public class RectangleController {
         return "redirect:/Rectangle/viewAllRectangles";
     }
 
-
+    @DeleteMapping("/Rectangle/DeleteRectangle/{id}")
+    public ResponseEntity<Void> deleteRectangle(@PathVariable int id) {
+        rectangleRepository.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
 }
