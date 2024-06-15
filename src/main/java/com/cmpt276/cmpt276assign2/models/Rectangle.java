@@ -1,6 +1,14 @@
 package com.cmpt276.cmpt276assign2.models;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "rectangles")
 public class Rectangle {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String name;
     private int width;
     private int height;
@@ -17,6 +25,34 @@ public class Rectangle {
         this.colour = colour;
         this.borderColour = borderColour;
         this.borderStyle = borderStyle;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public String getBorderColour() {
+        return borderColour;
+    }
+
+    public String getBorderStyle() {
+        return borderStyle;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setName(String name) {
@@ -41,5 +77,9 @@ public class Rectangle {
 
     public void setBorderStyle(String borderStyle) {
         this.borderStyle = borderStyle;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

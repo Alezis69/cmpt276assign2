@@ -3,45 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AddRectangle</title>
-    <link rel="stylesheet" href="/css/RectangleAdder.css">
+    <title>Add Rectangle</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="/js/RectangleAdder.js" defer></script>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid mt-5">
     <main>
-        <form id="RectangleFillForm">
-            <div class="FormInputBox">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name">
+        <form action="/Rectangle/AddRectangle" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label font-weight-bold">Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Name">
             </div>
-            <div class="FormInputBox">
-                <label for="width">Width</label>
-                <input type="number" id="width" name="width">
+            <div class="mb-3">
+                <label for="width" class="form-label font-weight-bold">Width</label>
+                <input type="number" id="width" name="width" class="form-control" placeholder="Width">
             </div>
-            <div class="FormInputBox">
-                <label for="height">Height</label>
-                <input type="number" id="height" name="height">
+            <div class="mb-3">
+                <label for="height" class="form-label font-weight-bold">Height</label>
+                <input type="number" id="height" name="height" class="form-control" placeholder="Height">
             </div>
-            <div class="FormInputBox">
-                <label for="colour">Colour</label>
-                <input type="text" id="colour" name="colour">
+            <div class="mb-3">
+                <label for="colour" class="form-label font-weight-bold">Colour</label>
+                <input type="text" id="colour" name="colour" class="form-control" placeholder="Colour">
             </div>
-            <div class="FormInputBox">
-                <label for="borderColour">Border Colour</label>
-                <input type="text" id="borderColour" name="borderColour">
+            <div class="mb-3">
+                <label for="borderColour" class="form-label font-weight-bold">Border Colour</label>
+                <input type="text" id="borderColour" name="borderColour" class="form-control" placeholder="Border Colour">
             </div>
-            <div class="FormInputBox">
-                <label for="borderStyle">Border Style</label>
-                <select id="borderStyle" name="borderStyle">
+            <div class="mb-3">
+                <label for="borderStyle" class="form-label font-weight-bold">Border Style</label>
+                <select id="borderStyle" name="borderStyle" class="form-control">
                     <option value="Solid">Solid</option>
                     <option value="Dotted">Dotted</option>
                     <option value="Dashed">Dashed</option>
                     <option value="None">None</option>
                 </select>
             </div>
-            <button type="submit" id="Add" onclick="addRectangle()">Add Rectangle</button>
-            <button type="button" id="Cancel" onclick="goBack()">Cancel</button>
+            <button type="submit" class="btn btn-primary">SEND</button>
+            <button type="button" class="btn btn-secondary" onclick="goBack()">Cancel</button>
         </form>
     </main>
 </div>
